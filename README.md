@@ -1,96 +1,84 @@
-# TOIB-PR4
-
-1. Создадим 2 виртуальные машины на базе ОС Debian 12 и обеспечим между ними сетевой обмен посредством сетевого моста
-
-   ![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/9f7c9f98-9ddc-4da0-b868-34871d9aafef)
+# TOIB4
 
 
-   ![image](Screenshots/2.png)
+## Создаем 2 виртуальные машины на базе Ubuntu (Ссылка - https://ubuntu.com/download/desktop) и обеспечиваем между ними сетевой обмен.
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/316f69df-1e15-44fb-bfeb-5a5ba500f55c)
 
-   ![image](Screenshots/3.png)
-   
-2. Включим на 1-ой (сервере) ВМ передачу логов по протоколу rsyslog на 2-ую ВМ (клиент)
-   
-   **2.1 Устанавим и настроим rsyslog на сервере и клиенте**
 
-   ![image](Screenshots/4.png)
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/c6eeef8f-9431-4c53-a176-dcaa504644ea)
 
-   **2.2 Проверим работоспособность rsyslog на сервере и клиенте**
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/318368be-6efa-42b8-a800-bedc86a8fe9e)
 
-   ![image](Screenshots/5.png)
 
-   **2.3 Включим UDP и TCP соединения**
+## Устанавливаем, включаем правила TCP и UDP соединения и настраиваем правила rsyslog на сервере и клиенте
 
-   ![image](Screenshots/6.png)
+**Установка и насйтрока на сервере**
 
-   **2.4 Установим правила на сервере**
-   
-   ![image](Screenshots/7.png)
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/244fc883-faa1-482f-9094-dc5ce1225aa8)
 
-   **2.5 Установим правила на клиенте**
-   
-   ![image](Screenshots/8.png)
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/628f2bc4-84bd-4cb1-a844-3037fd26d9f2)
 
-   **2.6 Проверим получения логов на сервере**
-   
-   ![image](Screenshots/9.png)
 
-   ![image](Screenshots/10.png)
 
-3. Установим и настроим получение логов на сервер с использованием Loki
-   
-   **3.1 Установим и отредактируем docker compose файл на сервере**
- 
-   ![image](Screenshots/11.png)
-   
-   ![image](Screenshots/12.png)
-   
-   **3.2 Запустим Loki**
- 
-   ![image](Screenshots/13.png)
- 
-   **3.3 Отредактируем promtail-config на клиенте**
- 
-   ![image](Screenshots/14.png)
 
-   **3.4 Отредактируем docker compose файл для promtail**
- 
-   ![image](Screenshots/15.png)
-  
-   **3.5 Запустим promtail на клиенте**
- 
-   ![image](Screenshots/16.png)
 
-   **3.6 Просмотрим логи клиента в Grafana**
- 
-   ![image](Screenshots/17.png)
 
-   ![image](Screenshots/18.png)
- 
- 4. Установим и настроим получение логов на сервере с использованием Signoz
+**Установка и настройка на клиенте**
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/7ede59d6-8b0b-469a-9725-a4cc0dcf61f7)
 
-   _Установка Signoz по инструкции с сайта: https://signoz.io/docs/install/docker/#install-signoz-using-docker-compose_
 
-   **4.1 Запустим Signoz**
-   
-   ![image](Screenshots/19.png)
-   
-   ![image](Screenshots/20.png)
-   
-   ![image](Screenshots/21.png)
-   
-   **4.2 Отредактируем конфигурации на клиенте для отправки данных в Signoz**
-   
-   _Установка приложения sample-nodejs-app согласно инструкции с сайта: https://github.com/SigNoz/sample-nodejs-app/_
-   
-   ![image](Screenshots/22.png)
 
-   **4.3 Запустим клиентское приложение sample-nodejs-app**
-   
-   ![image](Screenshots/23.png)
-   
-   **4.4 Проверим получение логов в Signoz**
-   
-   ![image](Screenshots/24.png)
-   
-   ![image](Screenshots/25.png)
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/370f786e-2a0a-451d-ad62-38b5be2932a1)
+
+
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/9fc7c0c0-156b-4a5c-94f5-1603c46ab904)
+
+
+
+
+## Проверяем получения логов на сервере
+
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/e8384202-35a6-4857-a439-f94f4caea141)
+
+
+
+## Устанавливаем и настраиваем получение логов на сервере с использованием Loki (Предварительно установив docker-compose)
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/b00a9972-2880-4d72-b068-7c7a5d9ae595)
+
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/9a012b09-c1b1-48de-aa3d-7d3127a96ec0)
+
+
+## Редактируем promtail и docker-compose на клиенте
+
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/d18c2063-aee7-42d8-95c8-967064b519e8)
+
+
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/dfa87ebf-e7cd-45a0-ab45-603fb3b07024)
+
+
+
+## Просматриваем логи клиента в Grafana
+
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/ea87dfee-b722-431d-a8f3-f9c59c4bee52)
+
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/b7d49aa1-5579-40a2-a180-c7dd49a97403)
+
+
+
+
+## Установка получения логов на сервере с использованием Signoz
+**Установка Signoz выполнена согласно инструкции с сайта: https://signoz.io/docs/install/docker/#install-signoz-using-docker-compose**
+
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/5360ec82-5552-4ed0-8846-85dd280dcab1)
+
+
+## Установка и настройка sample-nodejs-app на клиенте 
+**Установка sample-nodejs-app выполнена согласно инструкции с сайта https://github.com/SigNoz/sample-nodejs-app**
+
+
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/d62c474d-f79f-49c2-8886-77b5d7678c5e)
+
+
+
+## Проверка получения логов в Signoz
+![image](https://github.com/Vladislav789k/TOIB-PR4/assets/71137501/b32d90d4-1411-4c26-8c2e-f24e81c3fa62)
